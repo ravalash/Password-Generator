@@ -11,25 +11,56 @@ This project is written using Java script and a provided HTML and CSS file.
 
 # Screenshots
 Screenshots included in Github Repo
+https://github.com/ravalash/Password-Generator/tree/master/Screenshots
+
 
 # Features
-Nav bar is dyanmic, shifting content to right at large view points, left at medium view points, and collapsing at small viewpoints. Nav bar is also sticky and does not move. Columns on profile page collapse below large viewpoints for easier viewing. Content is justified left at large view points and centered at lower view poiints.
+Character limit prompt will not only reject numbers outside of the accepted range but will also reject string input and round decimals down.
+
+Character set is built based on user selection to ensure that results match desired outcome.
+
+After the password is generated, it is checked to make sure it contains at least one of each desired character set. This allows a truly random selection while also ensuring the password matches user specficiations.
 
 # Code Example
-    <header class="sticky-top">
-        <!--Container is used to allow link elements justified to end  -->
-        <div class="container" style="background-color: slategray;">
-            <!-- expand above small break point. left padding removed for content alignment -->
-            <nav class="navbar navbar-expand-sm navbar-dark pl-0  h-100">
-                <!-- left margin expanded to align content -->
-                <a class=" navbar-brand ml-5  " href="#" style="background-color:darkgrey">Adam
-                    Parsons</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+This while loop rejects inputs that don't meet the minimum standards until valid selection is made
 
+    while(uPassword != true && lPassword != true && nPassword != true && sPassword != true) {
+        var uPassword = confirm ("Would you like to include upper case characters?");
+        var lPassword = confirm ("Would you like to include lower case characters?");
+        var nPassword = confirm ("Would you like to include numerical characters?");
+        var sPassword = confirm ("Would you like to include special characters?");
+        if (uPassword != true && lPassword != true && nPassword != true && sPassword != true) {
+        alert("Your password must contain at least ONE character set selection");
+        }
+    }
+
+
+  This section is responsible for checking each character in the generated password to verify whether it was found in the separate character array.
+
+    for (i=0;i<numPassword;i++) {
+        // Loops once through each character in character array
+        for(n=0;n<uChars.length;n++) {
+            if (tempPassword[i] == uChars[n]) {
+            var uFound = true;
+            }
+        }
+        for(n=0;n<lChars.length;n++) {
+            if (tempPassword[i] == lChars[n]) {
+            var lFound = true;
+            }
+        }
+        for(n=0;n<nChars.length;n++) {
+            if (tempPassword[i] == nChars[n]) {
+            var nFound = true;
+            }
+        }
+        for(n=0;n<sChars.length;n++) {
+            if (tempPassword[i] == sChars[n]) {
+            var sFound = true;
+            }
+        }
+        }
 
 # How to Use
-Links on nav bar direct to each relevant page. Submit button opn contact page does not currently function.
+Click "Generate Password" to begin the password generation process. Follow the prompts to make selections. Click "cancel" on the first prompt to exit the loop.
 

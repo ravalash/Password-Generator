@@ -27,13 +27,20 @@ var sChars = "!@#$%^&*()_+-=";
 
 function generatePassword() {
   // Capture number of characters. Discard strings, round down integers
-  var nPassword = 0;
-  while ((nPassword < 8 || nPassword > 128) || isNaN(parseInt(nPassword))) {
-  var nPassword = prompt("Please enter a password length between 8 and 128 characters");
-  nPassword=Math.floor(nPassword);
+  var numPassword = 0;
+  while ((numPassword < 8 || numPassword > 128) || isNaN(parseInt(numPassword))) {
+    var numPassword = prompt("Please enter a password length between 8 and 128 characters");
+    numPassword=Math.floor(numPassword);
   }
-
-
+  while(uPassword != true && lPassword != true && nPassword != true && sPassword != true){
+    var uPassword = confirm ("Would you like to include upper case characters?");
+    var lPassword = confirm ("Would you like to include lower case characters?");
+    var nPassword = confirm ("Would you like to include numerical characters?");
+    var sPassword = confirm ("Would you like to include special characters?");
+    if (uPassword != true && lPassword != true && nPassword != true && sPassword != true){
+      alert("Your password must contain at least ONE character set selection");
+    }
+  }
 }
 
 // Add event listener to generate button

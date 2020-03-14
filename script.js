@@ -72,7 +72,6 @@ function generatePassword() {
     // For loop runs through once per length of password and chooses a random character from array. Adds character to built password.
     for (i=0;i<numPassword;i++) {
       tempPassword = tempPassword + chars[(Math.floor(Math.random()*chars.length))];
-      console.log(tempPassword);
     }
     // Loops once through each character in built password. Checks whether each character is found in separate character sets.
     for (i=0;i<numPassword;i++) {

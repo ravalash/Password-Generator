@@ -10,8 +10,24 @@ This homework file will deliver a fully functioning password generator that acce
 This project is written using Java script and a provided HTML and CSS file.
 
 # Screenshots
-Screenshots included in Github Repo
-https://github.com/ravalash/Password-Generator/tree/master/Screenshots
+
+
+Primary View Screen
+
+
+![MainPage](Screenshots/MainPage.JPG "Primary View Screen")
+
+
+Successful Execution
+
+
+![GeneratedPassword](Screenshots/GeneratedPassword.JPG "Successful Execution")
+
+
+Rejected Input
+
+
+![RejectedInput](Screenshots/RejectedInput.JPG "Rejected Input")
 
 
 # Features
@@ -62,5 +78,5 @@ This while loop rejects inputs that don't meet the minimum standards until valid
         }
 
 # How to Use
-Click "Generate Password" to begin the password generation process. Follow the prompts to make selections. Click "cancel" on the first prompt to exit the loop.
+Accessible at https://ravalash.github.io/Password-Generator/. Click "Generate Password" to begin the password generation process. Follow the prompts to make selections. Click "cancel" on the first prompt to exit the loop.
 
